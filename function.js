@@ -19,8 +19,15 @@ Array.prototype.myMap = function(callbackFn) {
 };
 
 // FILTER //
-Array.prototype.myFilter = function() {
-
+Array.prototype.myFilter = function(callbackFn) {
+    const myArr = [];
+    for (let i = 0; i < this.length; i++) {
+        if (this[i] == undefined)
+            continue;
+        if (callbackFn(this[i],i,this))
+            myArr.push(this[i]);
+    }
+    return myArr;
 };
 
 // SOME //
