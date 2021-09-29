@@ -9,8 +9,14 @@ Array.prototype.myEach = function(callbackFn) {
 
 // MAP //
 Array.prototype.myMap = function(callbackFn) {
-        
-}
+    const myArr = [];
+    for (let i = 0; i < this.length; i++) {
+        if (this[i] == undefined)
+            continue;
+        myArr[i] = callbackFn(this[i],i,this);
+    }
+    return myArr;
+};
 
 // FILTER //
 Array.prototype.myFilter = function() {
