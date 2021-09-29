@@ -55,8 +55,18 @@ Array.prototype.myEvery = function(callbackFn) {
 };
 
 // REDUCE //
-Array.prototype.myReduce = function() {
-
+Array.prototype.myReduce = function(callbackFn, initial) {
+    let sum = 0;
+    if (initial != null)
+        sum = initial;
+    for (let i = 0; i < this.length; i++) {
+        if (this[i] == undefined)
+            continue;
+        sum += callbackFn(this[i],i,this);
+        if (i!=0)
+            sum -= this[i-1];
+    }
+    return sum;
 };
 
 // INCLUDES //
