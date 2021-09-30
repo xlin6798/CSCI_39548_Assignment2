@@ -115,8 +115,20 @@ Array.prototype.myPush = function(...args) {
 };
 
 // LASTINDEXOF //
-Array.prototype.myLastIndexOf = function() {
-
+Array.prototype.myLastIndexOf = function(element, indx) {
+    if (indx < 0)
+        return -1;
+    let i = this.length-1;
+    if (indx != null)
+        i = indx;
+    if (element)
+    for (i; i >= 0; i--) {
+        if (this[i] == undefined)
+            continue;
+        if (this[i] == element)
+            return i;
+    }
+    return -1;
 };
 
 // KEYS //
