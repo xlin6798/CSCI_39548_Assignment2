@@ -87,8 +87,20 @@ Array.prototype.myIncludes = function(element, indx) {
 };
 
 // INDEXOF //
-Array.prototype.myIndexOf = function() {
-
+Array.prototype.myIndexOf = function(element, indx) {
+    if (indx >= this.length)
+        return -1;
+    let i = 0;
+    if (indx != null)
+        i = indx;
+    if (element)
+    for (i; i < this.length; i++) {
+        if (this[i] == undefined)
+            continue;
+        if (this[i] == element)
+            return i;
+    }
+    return -1;
 };
 
 // PUSH //
