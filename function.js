@@ -141,5 +141,8 @@ Object.grabKeys = function(obj) {
 
 // VALUES //
 Object.grabValues = function() {
-
+    const myArr = [];
+    for (let name in obj)
+        myArr.push(obj[name]);
+    return myArr;
 };
