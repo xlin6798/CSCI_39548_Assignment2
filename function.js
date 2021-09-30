@@ -70,8 +70,20 @@ Array.prototype.myReduce = function(callbackFn, initial) {
 };
 
 // INCLUDES //
-Array.prototype.myIncludes = function() {
-
+Array.prototype.myIncludes = function(element, indx) {
+    if (indx >= this.length)
+        return;
+    let i = 0;
+    if (indx != null)
+        i = indx;
+    if (element)
+    for (i; i < this.length; i++) {
+        if (this[i] == undefined)
+            continue;
+        if (this[i] == element)
+            return true;
+    }
+    return false;
 };
 
 // INDEXOF //
